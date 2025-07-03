@@ -84,9 +84,27 @@ new TradingView.widget({
 ```
 
 **cURL**
+
+#### daily
+
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
   https://www.theblock.co/api/indices/price-history/277090/1724803200/1725580800/1d
+```
+
+#### hourly
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://www.theblock.co/api/indices/price-history/277090/1750493916/1751573916/1h
+```
+
+
+#### minutely
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://www.theblock.co/api/indices/price-history/277090/1751555970/1751556030/1min
 ```
 
 ---
