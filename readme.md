@@ -13,7 +13,7 @@ Authorization: Bearer <API_KEY>
 ## Base URL
 
 ```
-https://api.theblock.co/api
+https://www.theblock.co/api
 ```
 
 > In development, this corresponds to the `API_URL` environment variable (default: `http://tbco.localhost/api`).
@@ -76,7 +76,7 @@ new TradingView.widget({
   symbol: 'INDEX_SYMBOL',
   container_id: 'tradingview',
   library_path: '/charting_library/',
-  datafeed: new Datafeeds.UDFCompatibleDatafeed('https://api.theblock.co/api', {
+  datafeed: new Datafeeds.UDFCompatibleDatafeed('https://www.theblock.co/api', {
     headers: { 'Authorization': 'Bearer YOUR_API_KEY' }
   }),
   autosize: true,
@@ -88,7 +88,7 @@ new TradingView.widget({
 **cURL**
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  https://api.theblock.co/api/indices/price-history/1/1686787200/1686873600/1h
+  https://www.theblock.co/api/indices/price-history/1/1686787200/1686873600/1h
 ```
 
 ---
