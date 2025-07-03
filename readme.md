@@ -1,8 +1,8 @@
-# TradingView Datafeed API 🌹
+# TradingView Datafeed API
 
 This API powers the TradingView charts for our indices. It implements the TradingView [Universal Datafeed](https://www.tradingview.com/charting-library-docs/latest/connecting_data/connecting_data.md) (UDF) format, enabling seamless integration with the TradingView Charting Library.
 
-## Authentication ❤️
+## Authentication
 
 All requests to the Datafeed API require authentication via a Bearer token. Obtain your API key from your account manager, then include it in the `Authorization` header:
 
@@ -16,9 +16,7 @@ Authorization: Bearer <API_KEY>
 https://www.theblock.co/api
 ```
 
-> In development, this corresponds to the `API_URL` environment variable (default: `http://tbco.localhost/api`).
-
-## Endpoints 🌼
+## Endpoints
 
 ### Get Historical Bars
 
@@ -88,9 +86,9 @@ new TradingView.widget({
 **cURL**
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  https://www.theblock.co/api/indices/price-history/1/1686787200/1686873600/1h
+  https://www.theblock.co/api/indices/price-history/277090/1724803200/1725580800/1d
 ```
 
 ---
 
-For questions or support, reach out to our developer support team. Happy charting! 🌻
+For questions or support, reach out to our developer support team. Happy charting!
