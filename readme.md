@@ -83,6 +83,72 @@ new TradingView.widget({
 });
 ```
 
+**Advanced Details**
+
+Config options to follow to be inline with our current implementation.
+
+```javascript
+ //@ts-ignore
+      new window.TradingView.widget({
+        symbol: this.tradingViewSymbolWithFallback,
+        autosize: true,
+        theme: this.theme,
+
+        ...(this.isLocal
+          ? {
+              container: 'tradingview',
+              library_path: '/charting_library/',
+              datafeed: new IndexDatafeed(
+                this.tradingViewSymbolWithFallback,
+                this.id,
+                this.$config.API_URL,
+              ),
+              disabled_features: [
+                'header_symbol_search',
+                'header_settings',
+                'header_quick_search',
+                'header_compare',
+                'go_to_date',
+                'header_indicators',
+                'create_volume_indicator_by_default',
+                'edit_buttons_in_legend',
+                'show_hide_button_in_legend',
+                'format_button_in_legend',
+                'delete_button_in_legend',
+                'use_localstorage_for_settings',
+                'left_toolbar',
+              ],
+              custom_css_url: '/charting_library/style.css',
+              ...(!this.isLightTheme && {
+                overrides: {
+                  'paneProperties.background': '#2e2e2e',
+                  'paneProperties.backgroundType': 'solid',
+                  'paneProperties.horzGridProperties.color': '#333333',
+                  'paneProperties.vertGridProperties.color': '#333333',
+                  'scalesProperties.axisHighlightColor': 'fefefe',
+                  'scalesProperties.lineColor': '#333333',
+                  'scalesProperties.textColor': '#fefefe',
+                },
+                loading_screen: { backgroundColor: '#222' },
+              }),
+            }
+          : {
+              gridColor: this.gridColor,
+              backgroundColor: this.backgroundColor,
+              allow_symbol_change: false,
+              interval: '60',
+              timezone: 'Etc/UTC',
+              style: '3',
+              locale: 'en',
+              enable_publishing: false,
+              hide_volume: true,
+              hide_legend: true,
+              withdateranges: true,
+              container_id: 'tradingview',
+            }),
+      })
+```
+
 **cURL**
 
 #### daily
